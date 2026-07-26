@@ -2,11 +2,15 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Автошкола</title>
+
+
 
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/organiztion.css">
+ <link rel="stylesheet" href="dist/css/bvi.min.css" type="text/css">
+ <title>Автошкола</title>
 </head>
 <body>
 
@@ -33,9 +37,11 @@
 
           <div class="header-right">
             <div class="phone">+7 (928) 024-95-95</div>
+            
           </div>
         </div>
       </div>
+ <a href="#" class="bvi-open" title="Версия сайта для слабовидящих">Версия сайта для слабовидящих</a>
     </header>
 
 
@@ -355,6 +361,16 @@
 </footer>
 
 <script src="js/script.js"></script>
-
+<script src="dist/js/bvi.min.js"></script>
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+        // Инициализируем плагин локально
+        new isvek.Bvi({
+            target: '.bvi-open',        // Класс вашей кнопки
+            lang: 'ru-RU',             // Русский язык панели
+            reload: false              // Отключаем перезагрузку страницы при кликах
+        });
+    });
+</script>
 </body>
 </html>
