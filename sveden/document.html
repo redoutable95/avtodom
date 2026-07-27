@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/style.css" />
 
     <link rel="stylesheet" href="../css/organiztion.css" />
+    <link rel="stylesheet" href="../dist/css/bvi.min.css" type="text/css">
   </head>
   <body>
      <header>
@@ -23,13 +24,20 @@
             />
 
             <div class="logo-text">
-              <h2>Автошкола</h2>
+              <h2 style="text-align: left;">Автошкола</h2>
 
               <span>АвтоДом</span>
+              <p style="font-size: small;">С НАМИ - ЗНАЧИТ С ПРАВАМИ</p>
             </div>
           </a>
 
-          <nav>
+          <button class="nav-toggle" type="button" aria-label="Открыть меню" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <nav class="main-nav">
             <ul>
               <li><a href="../index.html">Главная</a></li>
               <li>
@@ -43,6 +51,7 @@
 
           <div class="header-right">
             <div class="phone">+7 (928) 024-95-95</div>
+            <a href="#" class="bvi-open" title="Версия сайта для слабовидящих">Версия сайта для слабовидящих</a>
           </div>
         </div>
       </div>
@@ -781,5 +790,16 @@
     </footer>
 
     <script src="../js/organization.js"></script>
+    <script src="../dist/js/bvi.min.js"></script>
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+        // Инициализируем плагин локально
+        new isvek.Bvi({
+            target: '.bvi-open',        // Класс вашей кнопки
+            lang: 'ru-RU',             // Русский язык панели
+            reload: false              // Отключаем перезагрузку страницы при кликах
+        });
+    });
+</script>
   </body>
 </html>

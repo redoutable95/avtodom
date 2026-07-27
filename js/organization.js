@@ -11,6 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     documentButtons();
 
+    initMobileMenu();
+
+    makeEduTablesResponsive();
+
 });
 
 
@@ -139,6 +143,36 @@ function checkSignature(file){
 // Мобильное меню
 // =======================================
 
+function initMobileMenu(){
+
+    const navToggle = document.querySelector(".nav-toggle");
+
+    const mainNav = document.querySelector(".main-nav");
+
+    if(!navToggle || !mainNav) return;
+
+    navToggle.addEventListener("click", () => {
+
+        const isOpen = mainNav.classList.toggle("open");
+
+        navToggle.setAttribute("aria-expanded", String(isOpen));
+
+    });
+
+    mainNav.querySelectorAll("a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            mainNav.classList.remove("open");
+
+            navToggle.setAttribute("aria-expanded", "false");
+
+        });
+
+    });
+
+}
+
 function toggleMenu(){
 
     document
@@ -173,3 +207,33 @@ window.addEventListener("scroll",()=>{
     }
 
 });
+
+
+// =======================================
+// Адаптация учебных таблиц для мобильных экранов
+// =======================================
+
+function makeEduTablesResponsive(){
+
+    document.querySelectorAll(".edu-table").forEach(table => {
+
+        const headers = Array.from(table.querySelectorAll("thead th"))
+            .map(header => header.textContent.trim());
+
+        table.querySelectorAll("tbody tr").forEach(row => {
+
+            Array.from(row.cells).forEach((cell, index) => {
+
+                if(headers[index]){
+
+                    cell.dataset.label = headers[index];
+
+                }
+
+            });
+
+        });
+
+    });
+
+}

@@ -42,7 +42,7 @@ body{
 
 .container{
 
-    width:1280px;
+    width:min(1280px, 95%);
 
     margin:auto;
 
@@ -114,14 +114,6 @@ header{
 
 }
 
-.logo-image{
-
-    width:72px;
-
-    height:72px;
-
-}
-
 .logo h2{
 
     font-size:22px;
@@ -170,6 +162,7 @@ nav .active{
     display:flex;
 
     align-items:center;
+    justify-content: center;
 
     gap:25px;
 
@@ -184,7 +177,7 @@ nav .active{
 
 .header button{
 
-    background:var(--primary);
+    background:var(--yellow);
 
     color:#fff;
 
@@ -202,7 +195,111 @@ nav .active{
 
 .header button:hover{
 
-    background:var(--primary-dark);
+    background:var(--yellow);
+
+}
+
+.nav-toggle{
+
+    display:none;
+
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:5px;
+
+    width:48px;
+
+    height:48px;
+
+    padding:0;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:14px;
+
+    background:#fff;
+
+    box-shadow:0 6px 18px rgba(15,23,42,.1);
+
+    cursor:pointer;
+
+    transition:background .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+
+}
+
+.nav-toggle:hover{
+
+    background:#f8fafc;
+    border-color:#cbd5e1;
+    box-shadow:0 8px 22px rgba(15,23,42,.14);
+    transform:translateY(-1px);
+
+}
+
+.nav-toggle:focus-visible{
+
+    outline:3px solid rgba(250,204,21,.55);
+    outline-offset:3px;
+
+}
+
+.nav-toggle span{
+
+    display:block;
+
+    width:21px;
+
+    height:2.5px;
+
+    border-radius:2px;
+
+    background:var(--text);
+
+    transition:transform .25s ease, opacity .2s ease, width .25s ease;
+
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(1){
+
+    transform:translateY(7.5px) rotate(45deg);
+
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(2){
+
+    opacity:0;
+    transform:scaleX(.5);
+
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(3){
+
+    transform:translateY(-7.5px) rotate(-45deg);
+
+}
+
+.main-nav{
+
+    display:flex;
+
+}
+
+.main-nav ul{
+
+    display:flex;
+
+    gap:35px;
+
+    padding:0 25px;
+
+}
+
+.main-nav.open{
+
+    display:block;
 
 }
 
@@ -220,7 +317,7 @@ nav .active{
 
     display:grid;
 
-    grid-template-columns:1fr 420px;
+    grid-template-columns:1fr 550px;
 
     gap:60px;
 
@@ -351,18 +448,6 @@ nav .active{
 
 }
 
-.menu-icon{
-
-    width:38px;
-
-    height:38px;
-
-    flex-shrink:0;
-
-    border-radius:8px;
-
-}
-
 .sidebar span{
 
     font-size:15px;
@@ -450,12 +535,6 @@ nav .active{
 /* ===========================
    DOCUMENTS
 =========================== */
-
-.documents-title{
-
-    margin-top:40px;
-
-}
 
 .documents{
 
@@ -615,18 +694,6 @@ footer{
 
 }
 
-.footer-logo{
-
-    width:110px;
-
-    height:110px;
-
-    border-radius:18px;
-
-    margin-bottom:20px;
-
-}
-
 footer h3{
 
     margin-bottom:18px;
@@ -642,36 +709,6 @@ footer p{
     color:#cfcfcf;
 
     line-height:1.7;
-
-}
-
-.socials{
-
-    display:flex;
-
-    gap:14px;
-
-    margin-top:15px;
-
-}
-
-.social{
-
-    width:50px;
-
-    height:50px;
-
-    border-radius:12px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-.social:hover{
-
-    transform:translateY(-5px);
 
 }
 
@@ -742,234 +779,6 @@ button:active{
     color:#666;
 
     line-height:1.8;
-
-}
-
-/* ==========================================
-   PROGRAMS
-========================================== */
-
-.program-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:30px;
-
-    margin-bottom:70px;
-
-}
-
-.program-card{
-
-    background:#fff;
-
-    border-radius:18px;
-
-    overflow:hidden;
-
-    box-shadow:0 15px 40px rgba(0,0,0,.08);
-
-    transition:.35s;
-
-}
-
-.program-card:hover{
-
-    transform:translateY(-8px);
-
-}
-
-.program-image{
-
-    height:220px;
-
-}
-
-.program-card h3{
-
-    padding:25px 25px 10px;
-
-    font-size:24px;
-
-}
-
-.program-card p{
-
-    padding:0 25px;
-
-    color:#666;
-
-}
-
-.program-info{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    padding:18px 25px;
-
-    border-top:1px solid #eee;
-
-}
-
-.program-card button{
-
-    width:calc(100% - 50px);
-
-    margin:25px;
-
-}
-
-/* ==========================================
-   LANGUAGE
-========================================== */
-
-.language-card{
-
-    display:grid;
-
-    grid-template-columns:260px 1fr;
-
-    gap:40px;
-
-    align-items:center;
-
-    padding:35px;
-
-    margin-bottom:60px;
-
-}
-
-.language-image{
-
-    height:220px;
-
-    border-radius:16px;
-
-}
-
-/* ==========================================
-   STUDENTS
-========================================== */
-
-.students-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:25px;
-
-    margin:40px 0 70px;
-
-}
-
-.student-card{
-
-    background:#fff;
-
-    border-radius:18px;
-
-    padding:40px;
-
-    text-align:center;
-
-    box-shadow:0 10px 35px rgba(0,0,0,.07);
-
-}
-
-.student-card h3{
-
-    font-size:46px;
-
-    color:var(--primary);
-
-    margin-bottom:15px;
-
-}
-
-/* ==========================================
-   ADVANTAGES
-========================================== */
-
-.advantages-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:30px;
-
-    margin-top:40px;
-
-}
-
-.advantage{
-
-    text-align:center;
-
-}
-
-.advantage-icon{
-
-    width:90px;
-
-    height:90px;
-
-    border-radius:50%;
-
-    margin:0 auto 20px;
-
-}
-
-.advantage h3{
-
-    margin-bottom:15px;
-
-}
-
-/* ==========================================
-   STATS
-========================================== */
-
-.stats-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:30px;
-
-    margin:45px 0 70px;
-
-}
-
-.stat-card{
-
-    background:#fff;
-
-    border-radius:18px;
-
-    padding:40px;
-
-    text-align:center;
-
-    box-shadow:0 12px 35px rgba(0,0,0,.08);
-
-}
-
-.stat-card h2{
-
-    color:var(--primary);
-
-    font-size:54px;
-
-    margin-bottom:10px;
 
 }
 
@@ -1075,6 +884,77 @@ button:active{
 .edu-table tbody tr:hover{
 
     background:#fafcff;
+
+}
+
+/* Таблицы страницы «Объекты» на телефоне отображаются карточками. */
+@media(max-width:768px){
+
+    .objects-page .table-responsive{
+
+        overflow:visible;
+
+    }
+
+    .objects-page .edu-table,
+    .objects-page .edu-table tbody,
+    .objects-page .edu-table tr,
+    .objects-page .edu-table td{
+
+        display:block;
+        width:100%;
+
+    }
+
+    .objects-page .edu-table thead{
+
+        position:absolute;
+        width:1px;
+        height:1px;
+        padding:0;
+        margin:-1px;
+        overflow:hidden;
+        clip:rect(0, 0, 0, 0);
+        white-space:nowrap;
+        border:0;
+
+    }
+
+    .objects-page .edu-table tbody tr{
+
+        margin-bottom:16px;
+        border:1px solid #e5e7eb;
+        border-radius:14px;
+        overflow:hidden;
+
+    }
+
+    .objects-page .edu-table td{
+
+        padding:14px 16px;
+        overflow-wrap:anywhere;
+
+    }
+
+    .objects-page .edu-table td::before{
+
+        content:attr(data-label);
+        display:block;
+        margin-bottom:6px;
+        color:#64748b;
+        font-size:12px;
+        font-weight:600;
+        line-height:1.35;
+        text-transform:uppercase;
+        letter-spacing:.04em;
+
+    }
+
+    .objects-page .edu-table tbody tr:last-child{
+
+        margin-bottom:0;
+
+    }
 
 }
 .card{
@@ -1216,47 +1096,6 @@ button:active{
     box-shadow:0 12px 30px rgba(0,0,0,.08);
 
 }
-.status{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:8px;
-
-    padding:7px 14px;
-
-    border-radius:999px;
-
-    font-size:13px;
-
-    font-weight:600;
-
-}
-
-.status.green{
-
-    background:#dcfce7;
-
-    color:#15803d;
-
-}
-
-.status.yellow{
-
-    background:#fef3c7;
-
-    color:#b45309;
-
-}
-
-.status.red{
-
-    background:#fee2e2;
-
-    color:#dc2626;
-
-}
 .vertical-table{
     width:100%;
     border-collapse:collapse;
@@ -1331,74 +1170,6 @@ button:active{
    RESPONSIVE
 ========================================== */
 
-@media(max-width:1200px){
-
-.program-grid{
-
-    grid-template-columns:repeat(2,1fr);
-
-}
-
-.students-grid{
-
-    grid-template-columns:repeat(2,1fr);
-
-}
-
-.stats-grid{
-
-    grid-template-columns:repeat(2,1fr);
-
-}
-
-.advantages-grid{
-
-    grid-template-columns:repeat(2,1fr);
-
-}
-
-}
-
-@media(max-width:768px){
-
-.program-grid{
-
-    grid-template-columns:1fr;
-
-}
-
-.students-grid{
-
-    grid-template-columns:1fr;
-
-}
-
-.stats-grid{
-
-    grid-template-columns:1fr;
-
-}
-
-.advantages-grid{
-
-    grid-template-columns:1fr;
-
-}
-
-.language-card{
-
-    grid-template-columns:1fr;
-
-}
-
-.language-image{
-
-    height:200px;
-
-}
-
-}
-
 /* ===========================
    TABLET
 =========================== */
@@ -1455,17 +1226,69 @@ button:active{
 
 }
 
-nav{
+.nav-toggle{
+
+    display:flex;
+
+    margin-left:auto;
+
+}
+
+.main-nav{
+
+    display:none;
+
+    width:100%;
+
+    order:4;
+
+}
+
+.main-nav.open{
+
+    display:block;
+
+}
+
+.main-nav ul{
+
+    flex-direction:column;
+
+    gap:15px;
+
+    padding:0;
+
+}
+
+.main-nav ul li{
 
     width:100%;
 
 }
 
-nav ul{
+.main-nav ul a{
 
-    justify-content:center;
+    display:block;
 
-    flex-wrap:wrap;
+    padding:10px 0;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.header-right{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:8px;
+
+    width:100%;
+
+    order:5;
 
 }
 
@@ -1585,14 +1408,6 @@ nav ul{
 
 }
 
-.logo-image{
-
-    width:58px;
-
-    height:58px;
-
-}
-
 .logo h2{
 
     font-size:18px;
@@ -1608,6 +1423,13 @@ nav ul{
 .header button{
 
     width:100%;
+
+}
+
+.header .nav-toggle{
+
+    width:48px;
+    flex:none;
 
 }
 
