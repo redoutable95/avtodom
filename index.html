@@ -6,10 +6,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-
+<script src="https://api.proofwall.ru/api/public/snippet.js?project=98976242-c5f0-4d84-bedc-076edbb865d3" async></script>
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/organiztion.css">
  <link rel="stylesheet" href="dist/css/bvi.min.css" type="text/css">
+ <link rel="stylesheet" href="css/reviews.css">
  <title>Автошкола</title>
 </head>
 <body>
@@ -51,7 +52,7 @@
  
     </header>
 
-
+<!-- 
 <section class="hero">
 
 <div class="container hero-grid">
@@ -59,7 +60,7 @@
 <div>
 
 <p class="small">
-Надежно! Профессионально! Рядом с вами!
+НАДЕЖНО! ПРОФЕССИОНАЛЬНО! РЯДОМ С ВАМИ!
 </p>
 
 <h1>
@@ -75,26 +76,67 @@
 
 </ul>
 
-<!-- <div class="buttons">
-
-<button class="btn">
-Записаться
-</button>
-
-<button class="btn white">
-Стоимость
-</button>
-
-</div> -->
 
 </div>
 
-<div class="hero-image"><img src="./assets/images/hero-img.png" alt=""></div>
+<div class="hero-image"><img src="./assets/images/101.webp" alt=""></div>
 
 </div>
+
+</section> -->
+
+
+
+<section class="hero">
+
+    <!-- Фон -->
+    <div class="hero-bg">
+
+        <span class="shape shape-left"></span>
+        <span class="shape shape-right"></span>
+
+        <span class="circle"></span>
+
+        <span class="dots"></span>
+
+        <span class="lines"></span>
+
+        <span class="glow glow-1"></span>
+        <span class="glow glow-2"></span>
+
+    </div>
+
+    <div class="container hero-grid">
+
+        <div>
+
+            <p class="small">
+                НАДЕЖНО! ПРОФЕССИОНАЛЬНО! РЯДОМ С ВАМИ!
+            </p>
+
+            <h1>
+                Исполни свою мечту -
+                получи водительские <span style="color: #C62828;">права!</span> 
+            </h1>
+
+            <ul>
+
+                <li>Лицензированная автошкола</li>
+                <li>Опытные инструкторы</li>
+                <li>Современные автомобили</li>
+                <li>Подготовка к экзамену</li>
+
+            </ul>
+
+        </div>
+
+        <div class="hero-image">
+            <img src="./assets/images/101.webp" alt="">
+        </div>
+
+    </div>
 
 </section>
-
 
 
 <section class="advantages">
@@ -103,7 +145,7 @@
 
 <div class="card">
 <h3>8+ лет опыта</h3>
-<p>Успешно обучаем будущих водителей более 8 лет, помогая уверенно подготовиться к экзаменам и безопасному вождению.а</p>
+<p>Успешно обучаем будущих водителей более 8 лет, помогая уверенно подготовиться к экзаменам и безопасному вождению</p>
 </div>
 
 <div class="card">
@@ -176,25 +218,36 @@
 
 <div class="container">
 
-<h2>Стоимость обучения</h2>
+<div class="prices__heading">
+    <div>
+        <h2>Стоимость обучения</h2>
+    </div>
+</div>
 
 <div class="price-grid">
 
 <div class="price-card">
-<h3>Категория А - мотоциклы</h3>
-<h1>25 000 ₽</h1>
+<div class="price-card__top"><span class="price-card__icon">A</span><span class="price-card__label">Категория</span></div>
+<h3>Мотоциклы</h3>
+<p class="price-card__description">Для тех, кто хочет уверенно управлять двухколёсным транспортом.</p>
+<p class="price-card__price"><span>от</span> 25 000 ₽</p>
+
+</div>
+
+<div class="price-card price-card--featured">
+
+<div class="price-card__top"><span class="price-card__icon">B</span><span class="price-card__label">Категория</span></div>
+<h3>Легковые автомобили</h3>
+<p class="price-card__description">Полный курс для получения прав категории B.</p>
+<p class="price-card__price"><span>от</span> 25 000 ₽</p>
 
 </div>
 
 <div class="price-card">
-<h3>Категория В - легковые автомобили</h3>
-<h1>от 25 000 ₽</h1>
-
-</div>
-
-<div class="price-card">
-<h3>Дополнительные занятия по вождению</h3>
-<h1>от 1000 ₽</h1>
+<div class="price-card__top"><span class="price-card__icon price-card__icon--drive">+</span><span class="price-card__label">Практика</span></div>
+<h3>Дополнительные занятия</h3>
+<p class="price-card__description">Дополнительная практика, чтобы чувствовать себя спокойнее за рулём.</p>
+<p class="price-card__price"><span>от</span> 1 000 ₽</p>
 
 </div>
 
@@ -210,64 +263,127 @@
 
 <div class="container why-grid">
 
-<div class="photo"><img src="./assets/images/XXXL (9).webp" alt=""></div>
+<div class="why__photo">
+    <img src="./assets/images/XXXL (9).webp" alt="Учебный автомобиль автошколы АвтоДом">
+    <div class="why__photo-label"><span>АвтоДом</span>Учимся уверенно</div>
+</div>
 
-<div>
+<div class="why__content">
+    <p class="why__eyebrow">Обучение без лишнего стресса</p>
+    <h2>Почему выбирают нас</h2>
+    <p class="why__intro">Создаём комфортные условия, чтобы вы получили права уверенно и с удовольствием.</p>
 
-<h2 style="text-align: left;">Почему выбирают нас</h2>
-
-<ul>
-
-<li>Современные автомобили</li>
-<li>Опытные инструкторы</li>
-<li>Подготовка к экзамену</li>
-<li>Удобное расписание</li>
-<li>Рассрочка</li>
-
-</ul>
-
+    <ul class="why__list">
+        <li><span class="why__number">1</span><span>Современные автомобили</span></li>
+        <li><span class="why__number">2</span><span>Опытные инструкторы</span></li>
+        <li><span class="why__number">3</span><span>Подготовка к экзамену</span></li>
+        <li><span class="why__number">4</span><span>Удобное расписание</span></li>
+        <li><span class="why__number">5</span><span>Рассрочка без переплат</span></li>
+        <li><span class="why__number">6</span><span>Удобное расположение</span></li>
+    </ul>
 </div>
 
 </div>
 
 </section>
-
-
-
-
-
-
-
 
 <section class="reviews">
 
-<div class="container">
+    <div class="container">
 
-<h2>Отзывы</h2>
+        <div class="reviews__header">
 
-<div class="slider">
+            <h2 class="reviews__title">
+                Отзывы
+            </h2>
 
-<div class="review active">
-<h3>Hava Elmurzaeva</h3>
-<p>Хочу оставить положительный отзыв о автошколе «Автодом». Удобное место положение недалеко от дома (по ул. Узуева), удобное приложение для онлайн обучения, хорошие преподаватели и инструктора. Преподаватель Рамзан объясняет очень доходчиво, используя примеры из жизни. Инструктор Малика спокойная и терпеливая, научит водить даже самого безнадежного. Огромная им благодарность за их работу. Отдельное спасибо за игровую комнату для детей на автодроме, она меня спасала, когда нужно было ехать на практические занятия и вставал вопрос где оставить ребенка. Сдала теорию с первого раза👏 девиз Автодрма «с нами значит с правами» оправдывает себя😄
-  </p>
+            <div class="reviews__info">
+
+                <div class="reviews__company">
+
+                    <div class="reviews__logo">
+
+                        <img src="assets/images/review_yandex_map.svg" alt=""><!-- Здесь позже появится логотип Яндекс -->
+
+                    </div>
+
+                    <div class="reviews__summary">
+
+                        <div class="reviews__rating">
+
+                            <span
+    class="reviews__rating-value"
+    id="reviewsRating">
+</span>
+
+                            <div class="reviews__stars">
+
+                                <!-- Здесь позже появятся SVG-звезды -->
+
+                            </div>
+
+                        </div>
+
+                        <div
+    class="reviews__count"
+    id="reviewsCount">
 </div>
 
-<div class="review">
-<h3>Равана Джамалова</h3>
-<p>Хочу сказать большое спасибо всей автошколе! ❤️ Отдельная благодарность Зареме за терпение и поддержку на автодроме, Розе-за спокойное и понятное обучение вождению по городу, а Луизе-за отзывчивость и помощь по всем…</p>
-</div>
+                    </div>
 
-<div class="review">
-<h3>Ахмед</h3>
-<p>Ассаламу Алайкум! Хочу выразить огромную благодарность автошколе «Автодом». Обучение проходило на высшем уровне-начиная от лекций, заканчивая замечательной практикой. Особую благодарность хочется выразить инструктору по вождению Белескаеву Саламбеку за его терпение, умение поддержать, когда ничего не получается и хорошую подачу материала. Вождение было просто супер, мастер своего дела, всем реко</p>
-</div>
+                </div>
 
-</div>
+                <a
+    href="#"
+    class="reviews__button"
+    id="reviewsButton"
+    target="_blank">
+    Оставить отзыв
+</a>
+            </div>
 
-</div>
+        </div>
 
+        <div
+            class="reviews__grid"
+            id="reviewsGrid"
+        >
+
+             <!-- Карточки отзывов будут создаваться JavaScript -->
+
+        </div>
+        <div class="reviews__actions">
+
+          <button
+              id="loadMoreReviews"
+              class="reviews__load-more">
+
+              Показать ещё
+
+          </button>
+        </div>
+        <!-- <div class="reviews__footer">
+
+            <button
+                id="loadMore"
+                class="reviews__load-more"
+            >
+                Показать ещё
+            </button>
+
+        </div> -->
+
+    
+</div>
 </section>
+
+
+
+
+
+
+
+
 
 <section class="gallery">
 
@@ -417,5 +533,44 @@
         });
     });
 </script>
+<script src="js/reviews.js"></script>
+<div
+    class="review-modal"
+    id="reviewModal">
+
+    <div class="review-modal__content">
+
+        <button
+            class="review-modal__close"
+            id="closeReviewModal"
+            aria-label="Закрыть">
+
+            &times;
+
+        </button>
+
+        <div
+            class="review-modal__author"
+            id="modalReviewAuthor">
+        </div>
+
+        <div
+            class="review-modal__rating"
+            id="modalReviewRating">
+        </div>
+
+        <div
+            class="review-modal__date"
+            id="modalReviewDate">
+        </div>
+
+        <div
+            class="review-modal__text"
+            id="modalReviewText">
+        </div>
+
+    </div>
+
+</div>
 </body>
 </html>
